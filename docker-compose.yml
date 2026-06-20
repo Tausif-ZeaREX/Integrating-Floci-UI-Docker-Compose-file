@@ -6,6 +6,7 @@ services:
     environment:
       FLOCI_HOSTNAME: floci
 
+
   floci-api:
     image: floci/floci-ui:latest
     ports:
