@@ -5,3 +5,16 @@ services:
       - "4566:4566"
     environment:
       FLOCI_HOSTNAME: floci
+
+  floci-api:
+    image: floci/floci-ui:latest
+    ports:
+      - "4500:4500"
+    environment:
+      FLOCI_ENDPOINT: http://floci:4566
+      AWS_REGION: us-east-1
+      AWS_ACCESS_KEY_ID: test
+      AWS_SECRET_ACCESS_KEY: test
+      PORT: 4500
+    depends_on:
+      - floci
